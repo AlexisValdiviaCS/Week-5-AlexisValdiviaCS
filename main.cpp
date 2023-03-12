@@ -10,16 +10,36 @@ using namespace std;
 class Vehicle {
 public: 
   void print();
-  Vehicle (int wheels = 0, int doors = 0){
-  num_wheels = wheels;
-  num_doors = doors;
-  }
+  Vehicle (int wheels = 0, int doors = 0);
+  // constructor with default parameters
 private:
   int num_wheels;
   int num_doors;
-}; 
+};  
+
+Vehicle::Vehicle(int wheels, int doors)
+{
+  num_wheels = wheels;
+  num_doors = doors;
+}
+
+void Vehicle::print()
+{
+  cout << num_wheels << "wheels and " << num_doors << num_doors << " doors." << endl;
+}
+
+
+
 
 // Car
+class Car: public Vehicle {
+public:
+  void 
+private: 
+  int mpg;
+  string model;
+};
+
 
 // Truck
 
