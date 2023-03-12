@@ -28,18 +28,27 @@ void Vehicle::print()
   cout << num_wheels << "wheels and " << num_doors << num_doors << " doors." << endl;
 }
 
-
-
-
 // Car
 class Car: public Vehicle {
 public:
-  void 
+  void print();
+  Car(int = 0, int = 0, int = 0, string = " ");
 private: 
   int mpg;
   string model;
 };
 
+void Car::print()
+{
+  cout << model << " gets " << mpg << " miles per gallon has ";
+  Vehicle::print();
+}
+
+Car::Car(int wheels, int doors, int miles_pg, string name): Vehicle()
+{
+  mpg = miles_pg;
+  model = name;
+}
 
 // Truck
 
