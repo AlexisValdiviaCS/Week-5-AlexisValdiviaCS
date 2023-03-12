@@ -11,7 +11,6 @@ class Vehicle {
 public: 
   void print();
   Vehicle (int wheels = 0, int doors = 0);
-  // constructor with default parameters
 private:
   int num_wheels;
   int num_doors;
@@ -51,6 +50,27 @@ Car::Car(int wheels, int doors, int miles_pg, string name): Vehicle()
 }
 
 // Truck
+class Truck: public Vehicle {
+public:
+  void print();
+  Truck(int = 0, int = 0, int = 0, int = 0, string = " ");
+private:
+  int mpg;
+  int tons;
+  string model;
+};
+
+void Truck::print()
+{
+  cout << model << " gets " << mpg << " miles per gallon and can carry " << tons << " tons, and "; 
+  Vehicle::print();
+}
+
+Truck::Truck(int wheels, int doors, int miles_pg, int weight, string name):Vehicle(){
+  mpg = miles_pg;
+  tons = weight;
+  model = name;
+};
 
 int main() {
   // declare local variables
