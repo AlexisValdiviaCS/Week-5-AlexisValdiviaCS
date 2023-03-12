@@ -74,19 +74,43 @@ Truck::Truck(int wheels, int doors, int miles_pg, int weight, string name):Vehic
 
 int main() {
   // declare local variables
+  int carW, carD, carMPG, truckW, truckD, truckMPG, truckTons;
+  string carType, truckType;
 
   cout << "Enter car details\n";
-
+  cout << "Number of wheels: ";
+  cin >> carW;
+  cout << "Number of doors: ";
+  cin >> carD;
+  cout << "MPG: ";
+  cin >> carMPG;
+  cin.ignore();
+  getline(cin, carType);
+  
   // declare Car object
+  Car autoCar(carW, carD, carMPG, carType);
 
   cout << endl;
   cout << "Enter truck details\n";
+  cout << "Number of wheels: ";
+  cin >> truckW;
+  cout << "Number of doors: ";
+  cin >> truckD;
+  cout << "MPG: ";
+  cin >> truckMPG;
+  cout << "How many tons can the truck carry: ";
+  cin >> truckTons;
+  cout << "Model name: ";
+  cin >> truckType;
 
   // declare Truck object
+  Truck autoTruck(truckW, truckD, truckMPG, truckTons, truckType);
 
   cout << endl;
 
   // call print function for your car and for your truck
+  autoCar.print();
+  autoTruck.print();
 
   cout << "\nGoodbye\n";
   return 0;
